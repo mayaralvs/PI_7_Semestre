@@ -63,6 +63,7 @@ public class CadastroFornecedor extends JFrame {
 				try {
 					CadastroFornecedor frame = new CadastroFornecedor();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -76,7 +77,7 @@ public class CadastroFornecedor extends JFrame {
      */
 	public CadastroFornecedor() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 747, 434);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -485,6 +486,7 @@ public class CadastroFornecedor extends JFrame {
 		        // Abre a tela Inicio
 		        Inicio inicio = new Inicio(); 
 		        inicio.setVisible(true);
+		        inicio.setLocationRelativeTo(null);
 			}
 		});
 		btnSair.setBounds(413, 15, 89, 23);

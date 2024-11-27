@@ -46,6 +46,7 @@ public class Compras extends JFrame {
             try {
                 Compras frame = new Compras();
                 frame.setVisible(true);
+				frame.setLocationRelativeTo(null);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -283,23 +284,24 @@ public class Compras extends JFrame {
 
         // Atualiza o estoque no banco de dados
         int produtoId = listaIds.get(cbProdutos.getSelectedIndex());
-        atualizarEstoque(produtoId, quantidade, lote, preco1, custo);
+        atualizarEstoque(produtoId, quantidade, lote, preco, custo);
     }
 
-    private void atualizarEstoque(int produtoId, int quantidadeComprada, String lote, double valor, double custo) {
+    private void atualizarEstoque(int produtoId, int quantidadeComprada, String lote, double preco, double custo) {
         try {
             // Conectar ao banco de dados
             Connection con = Conexao.conexao();
 
             // SQL para buscar a quantidade atual do produto
-            String sqlBuscaEstoque = "SELECT quantidade, lote, valor, custo FROM produtos WHERE id = ?";
+            String sqlBuscaEstoque = "SELECT quantidade, lote, preco, custo FROM produtos WHERE id = ?";
             PreparedStatement stmtBuscaEstoque = con.prepareStatement(sqlBuscaEstoque);
             stmtBuscaEstoque.setInt(1, produtoId);
             ResultSet rs = stmtBuscaEstoque.executeQuery();
 
             if (rs.next()) {
+            	// double preco = Double.parseDouble(textField_1.getText());
                 int quantidadeAtual = rs.getInt("quantidade");
-                int novaQuantidade = quantidadeAtual - quantidadeComprada;
+                int novaQuantidade = quantidadeAtual + quantidadeComprada;
                 
                 // Verifica se há estoque suficiente
                 if (novaQuantidade >= 0) {
@@ -308,7 +310,7 @@ public class Compras extends JFrame {
                     PreparedStatement stmtAtualizarEstoque = con.prepareStatement(sqlAtualizarEstoque);
                     stmtAtualizarEstoque.setInt(1, novaQuantidade);
                     stmtAtualizarEstoque.setString(2, lote);  // Atualizando o lote
-                    stmtAtualizarEstoque.setDouble(3, valor); // Atualizando o valor
+                    stmtAtualizarEstoque.setDouble(3, preco); // Atualizando o valor
                     stmtAtualizarEstoque.setDouble(4, custo); // Atualizando o custo
                     stmtAtualizarEstoque.setInt(5, produtoId); // ID do produto
                     stmtAtualizarEstoque.executeUpdate();

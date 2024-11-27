@@ -37,6 +37,7 @@ public class Vendas extends JFrame {
             try {
                 Vendas frame = new Vendas();
                 frame.setVisible(true);
+				frame.setLocationRelativeTo(null);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -54,7 +55,7 @@ public class Vendas extends JFrame {
         
         JPanel panel = new JPanel();
         panel.setBorder(new TitledBorder(null, "Venda", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        panel.setBounds(90, 0, 646, 391);
+        panel.setBounds(0, 0, 726, 391);
         contentPane.add(panel);
         panel.setLayout(null);
         
@@ -164,6 +165,7 @@ public class Vendas extends JFrame {
 		        // Abre a tela Inicio
 		        Inicio inicio = new Inicio(); 
 		        inicio.setVisible(true);
+		        inicio.setLocationRelativeTo(null);
         	}
         });
         btSair.setBounds(525, 350, 111, 30);

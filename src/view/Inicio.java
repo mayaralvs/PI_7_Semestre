@@ -26,8 +26,9 @@ public class Inicio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Inicio frame = new Inicio();
-					frame.setVisible(true);
+					Inicio frame1 = new Inicio();
+					frame1.setVisible(true);
+					frame1.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -41,7 +42,7 @@ public class Inicio extends JFrame {
 
 	public Inicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 649, 409);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -61,12 +62,14 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadFun = new JButton("Cadastrar Funcionário");
-		btnCadFun.setBounds(10, 59, 139, 87);
+		btnCadFun.setBounds(69, 62, 139, 87);
 		btnCadFun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				CadastroFuncionarios exibir = new CadastroFuncionarios();
 				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 		panel.setLayout(null);
@@ -83,12 +86,15 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadCliente = new JButton("Cadastro de Clientes");
-		btnCadCliente.setBounds(159, 59, 139, 87);
+		btnCadCliente.setBounds(232, 62, 139, 87);
 		btnCadCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				CadastroClientes exibir = new CadastroClientes();
+
 				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 
@@ -106,12 +112,14 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadProduto = new JButton("Cadastro de Produtos");
-		btnCadProduto.setBounds(308, 59, 139, 87);
+		btnCadProduto.setBounds(391, 62, 139, 87);
 		btnCadProduto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				CadastroProdutos exibir = new CadastroProdutos();
 				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 		btnCadProduto
@@ -128,12 +136,14 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadForn = new JButton("Cadastro de Fornecedores");
-		btnCadForn.setBounds(457, 59, 144, 87);
+		btnCadForn.setBounds(69, 186, 144, 87);
 		btnCadForn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				CadastroFornecedor exibir = new CadastroFornecedor();
 				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 		btnCadForn.setIcon(
@@ -150,12 +160,14 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnVendas = new JButton("Vendas");
-		btnVendas.setBounds(81, 192, 139, 87);
+		btnVendas.setBounds(232, 186, 139, 87);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				Vendas exibir = new Vendas();
 				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 
@@ -170,5 +182,20 @@ public class Inicio extends JFrame {
 				"C:\\Users\\mvlln\\Downloads\\Logotipo_confeitaria_bolos_gradiente_rosa_marrom-removebg-preview (2).png"));
 		lblNewLabel.setBounds(512, 249, 114, 100);
 		panel.add(lblNewLabel);
+
+		JButton btnVendas_1 = new JButton("Compras");
+		btnVendas_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				Compras exibir = new Compras();
+				exibir.setVisible(true);
+				exibir.setLocationRelativeTo(null);
+				dispose();
+			}
+		});
+		btnVendas_1.setVerticalTextPosition(SwingConstants.BOTTOM);
+		btnVendas_1.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnVendas_1.setBounds(391, 186, 139, 87);
+		panel.add(btnVendas_1);
 	}
 }

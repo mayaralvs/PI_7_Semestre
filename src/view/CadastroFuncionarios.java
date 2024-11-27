@@ -63,6 +63,7 @@ public class CadastroFuncionarios extends JFrame {
 				try {
 					CadastroFuncionarios frame = new CadastroFuncionarios();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -78,7 +79,7 @@ public class CadastroFuncionarios extends JFrame {
 		setResizable(false);
 		setTitle("Cadastro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 740, 501);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -240,6 +241,7 @@ public class CadastroFuncionarios extends JFrame {
 				// Abre a tela Inicio
 				Inicio inicio = new Inicio();
 				inicio.setVisible(true);
+				inicio.setLocationRelativeTo(null);
 			}
 		});
 		btnVoltar.setBounds(400, 21, 102, 23);

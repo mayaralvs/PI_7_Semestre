@@ -59,8 +59,9 @@ public class CadastroClientes extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CadastroClientes frame = new CadastroClientes();
-					frame.setVisible(true);
+					CadastroClientes frame2 = new CadastroClientes();
+					frame2.setVisible(true);
+					frame2.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,7 +75,7 @@ public class CadastroClientes extends JFrame {
      */
 	public CadastroClientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 763, 490);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -400,6 +401,7 @@ public class CadastroClientes extends JFrame {
 				// Abre a tela Inicio
 				Inicio inicio = new Inicio();
 				inicio.setVisible(true);
+				inicio.setLocationRelativeTo(null);
 			}
 		});
 		btnSair.setBounds(413, 15, 89, 23);

@@ -62,6 +62,7 @@ public class CadastroProdutos extends JFrame {
 				try {
 					CadastroProdutos frame = new CadastroProdutos();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,10 +75,12 @@ public class CadastroProdutos extends JFrame {
      * Define os componentes da interface e adiciona eventos aos botões.
      */
 	public CadastroProdutos() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 694, 430);
+		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -416,6 +419,7 @@ public class CadastroProdutos extends JFrame {
 		        // Abre a tela Inicio
 		        Inicio inicio = new Inicio(); 
 		        inicio.setVisible(true);
+		        inicio.setLocationRelativeTo(null);
 			}
 		});
 		btnSair.setBounds(413, 15, 89, 23);
