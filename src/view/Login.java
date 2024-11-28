@@ -15,7 +15,6 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -128,12 +127,12 @@ public class Login extends JFrame {
 		});
 		btnEntrar.setBackground(SystemColor.activeCaption);
 		btnEntrar.setFont(new Font("Verdana", Font.PLAIN, 16));
-		btnEntrar.setBounds(230, 353, 113, 23);
+		btnEntrar.setBounds(242, 365, 113, 23);
 		contentPane.add(btnEntrar);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\Logotipo_confeitaria_bolos_gradiente_rosa_marrom-removebg-preview (1).png"));
-		lblNewLabel_1.setBounds(157, 0, 265, 263);
+		lblNewLabel_1.setBounds(165, 0, 265, 263);
 		contentPane.add(lblNewLabel_1);
 	}
 }

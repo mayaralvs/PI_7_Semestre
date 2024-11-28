@@ -15,6 +15,8 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 import controller.Conexao;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
 
 public class Vendas extends JFrame {
 
@@ -46,7 +48,7 @@ public class Vendas extends JFrame {
 
     public Vendas() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 752, 430);
+        setBounds(100, 100, 800, 500);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -54,21 +56,21 @@ public class Vendas extends JFrame {
         contentPane.setLayout(null);
         
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "Venda", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        panel.setBounds(0, 0, 726, 391);
+        panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Venda", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+        panel.setBounds(141, 0, 643, 455);
         contentPane.add(panel);
         panel.setLayout(null);
         
         JLabel lblProduto = new JLabel("Produto:");
-        lblProduto.setBounds(72, 11, 70, 25);
+        lblProduto.setBounds(71, 22, 70, 25);
         panel.add(lblProduto);
         
         textField = new JTextField();
-        textField.setBounds(142, 11, 200, 25);
+        textField.setBounds(141, 22, 200, 25);
         panel.add(textField);
         
         cbProdutos = new JComboBox<>();
-        cbProdutos.setBounds(142, 41, 200, 25);
+        cbProdutos.setBounds(141, 52, 200, 25);
         panel.add(cbProdutos);
         
         // Adicionar DocumentListener para o JTextField
@@ -98,41 +100,41 @@ public class Vendas extends JFrame {
         });
         
         JLabel lblQuantidade = new JLabel("Quantidade:");
-        lblQuantidade.setBounds(72, 81, 100, 25);
+        lblQuantidade.setBounds(71, 88, 100, 25);
         panel.add(lblQuantidade);
         
         textField_1 = new JTextField();
-        textField_1.setBounds(172, 81, 50, 25);
+        textField_1.setBounds(171, 88, 50, 25);
         panel.add(textField_1);
         
         JLabel lblPreco = new JLabel("Preço:");
-        lblPreco.setBounds(72, 121, 70, 25);
+        lblPreco.setBounds(32, 129, 70, 25);
         panel.add(lblPreco);
         
         textField_2 = new JTextField();
-        textField_2.setBounds(142, 121, 100, 25);
+        textField_2.setBounds(102, 129, 100, 25);
         textField_2.setEditable(false);
         panel.add(textField_2);
         
         JLabel lblTotal = new JLabel("Total:");
-        lblTotal.setBounds(72, 161, 70, 25);
+        lblTotal.setBounds(227, 129, 70, 25);
         panel.add(lblTotal);
         
         textField_3 = new JTextField();
-        textField_3.setBounds(142, 161, 100, 25);
+        textField_3.setBounds(297, 129, 100, 25);
         textField_3.setEditable(false);
         panel.add(textField_3);
         
         JButton btnAdicionar = new JButton("Adicionar");
-        btnAdicionar.setBounds(391, 158, 100, 30);
+        btnAdicionar.setBounds(644, 155, 100, 30);
         panel.add(btnAdicionar);
         
         JButton btnFinalizar = new JButton("Finalizar Venda");
-        btnFinalizar.setBounds(328, 350, 150, 30);
+        btnFinalizar.setBounds(483, 368, 150, 30);
         panel.add(btnFinalizar);
         
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(10, 213, 626, 115);
+        scrollPane.setBounds(10, 175, 623, 169);
         panel.add(scrollPane);
         
         table = new JTable();
@@ -146,12 +148,12 @@ public class Vendas extends JFrame {
         scrollPane.setViewportView(table);
         
         JLabel lblNewLabel = new JLabel("Total da Compra: ");
-        lblNewLabel.setBounds(10, 350, 99, 22);
+        lblNewLabel.setBounds(10, 395, 99, 22);
         panel.add(lblNewLabel);
         
         textField_4 = new JTextField();
         textField_4.setEditable(false);
-        textField_4.setBounds(119, 350, 86, 25);
+        textField_4.setBounds(119, 395, 86, 25);
         panel.add(textField_4);
         textField_4.setColumns(10);
         
@@ -168,8 +170,22 @@ public class Vendas extends JFrame {
 		        inicio.setLocationRelativeTo(null);
         	}
         });
-        btSair.setBounds(525, 350, 111, 30);
+        btSair.setBounds(522, 409, 111, 30);
         panel.add(btSair);
+        
+        JButton btnNewButton = new JButton("Adicionar");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		adicionarProduto();
+        	}
+        });
+        btnNewButton.setBounds(493, 130, 89, 23);
+        panel.add(btnNewButton);
+        
+        JLabel lblNewLabel_1 = new JLabel("");
+        lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+        lblNewLabel_1.setBounds(0, 0, 142, 461);
+        contentPane.add(lblNewLabel_1);
         
         // Carregar produtos ao iniciar a tela
         carregarProdutos();

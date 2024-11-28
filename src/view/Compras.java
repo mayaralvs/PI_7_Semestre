@@ -14,6 +14,10 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controller.Conexao;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Compras extends JFrame {
 
@@ -62,8 +66,8 @@ public class Compras extends JFrame {
         contentPane.setLayout(null);
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "Compras", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        panel.setBounds(20, 20, 750, 420);
+        panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Compras", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+        panel.setBounds(143, 0, 641, 411);
         contentPane.add(panel);
         panel.setLayout(null);
 
@@ -84,11 +88,11 @@ public class Compras extends JFrame {
         panel.add(textFieldQuantidade);
 
         JButton btnAdicionar = new JButton("Adicionar");
-        btnAdicionar.setBounds(624, 218, 100, 30);
+        btnAdicionar.setBounds(531, 218, 100, 30);
         panel.add(btnAdicionar);
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(34, 259, 690, 150);
+        scrollPane.setBounds(34, 259, 597, 141);
         panel.add(scrollPane);
 
         table = new JTable();
@@ -131,6 +135,27 @@ public class Compras extends JFrame {
         textField_2.setColumns(10);
         textField_2.setBounds(277, 89, 86, 25);
         panel.add(textField_2);
+        
+        JLabel lblNewLabel = new JLabel("");
+        lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+        lblNewLabel.setBounds(0, 0, 142, 461);
+        contentPane.add(lblNewLabel);
+        
+        JButton btnSair = new JButton("Sair");
+        btnSair.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		// Fecha a tela atual (Compras)
+				dispose();
+
+				// Abre a tela Inicio
+				Inicio inicio = new Inicio();
+				inicio.setVisible(true);
+				inicio.setLocationRelativeTo(null);
+        	}
+        });
+        btnSair.setBounds(674, 422, 100, 30);
+        contentPane.add(btnSair);
 
         // Carregar produtos no ComboBox ao iniciar
         carregarProdutos();
@@ -153,6 +178,15 @@ public class Compras extends JFrame {
 
         btnAdicionar.addActionListener(e -> adicionarProduto());
     }
+    
+    private void limparCampos() {
+        textFieldQuantidade.setText("");
+        textField.setText("");       // Campo Lote
+        textField_1.setText("");     // Campo Valor
+        textField_2.setText("");     // Campo Custo
+        // Adicione outros campos, se necessário
+    }
+
 
     private void carregarProdutos() {
         listaProdutos = new ArrayList<>();
@@ -172,6 +206,7 @@ public class Compras extends JFrame {
                 listaPrecos.add(preco);
                 listaIds.add(id);
             }
+            
 
             rs.close();
             stmt.close();
@@ -285,6 +320,8 @@ public class Compras extends JFrame {
         // Atualiza o estoque no banco de dados
         int produtoId = listaIds.get(cbProdutos.getSelectedIndex());
         atualizarEstoque(produtoId, quantidade, lote, preco, custo);
+        
+        limparCampos();
     }
 
     private void atualizarEstoque(int produtoId, int quantidadeComprada, String lote, double preco, double custo) {

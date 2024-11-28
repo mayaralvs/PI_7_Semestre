@@ -25,6 +25,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
 
 /**
  * Tela de cadastro de clientes. Permite a inserção, exclusão, atualização e
@@ -83,17 +84,13 @@ public class CadastroClientes extends JFrame {
 		contentPane.setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 747, 451);
+		panel.setBounds(0, 0, 784, 461);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
-		JLabel lblImg = new JLabel("Imagem");
-		lblImg.setBounds(0, 0, 77, 365);
-		panel.add(lblImg);
-
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Dados ", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(87, 0, 657, 188);
+		panel_1.setBounds(144, 0, 642, 188);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 
@@ -121,12 +118,12 @@ public class CadastroClientes extends JFrame {
 		tfNome.setColumns(10);
 
 		tfTelefone = new JTextField();
-		tfTelefone.setBounds(561, 32, 86, 20);
+		tfTelefone.setBounds(546, 60, 86, 20);
 		panel_1.add(tfTelefone);
 		tfTelefone.setColumns(10);
 
 		JLabel lblTelefone = new JLabel("Telefone");
-		lblTelefone.setBounds(511, 35, 46, 14);
+		lblTelefone.setBounds(496, 63, 46, 14);
 		panel_1.add(lblTelefone);
 
 		JLabel lblEmail = new JLabel("E-mail");
@@ -139,12 +136,12 @@ public class CadastroClientes extends JFrame {
 		panel_1.add(tfEmail);
 
 		JLabel lblCPF = new JLabel("CPF");
-		lblCPF.setBounds(363, 66, 46, 14);
+		lblCPF.setBounds(363, 66, 34, 14);
 		panel_1.add(lblCPF);
 
 		tfCPF = new JTextField();
 		tfCPF.setColumns(10);
-		tfCPF.setBounds(413, 63, 86, 20);
+		tfCPF.setBounds(392, 63, 86, 20);
 		panel_1.add(tfCPF);
 
 		JLabel lblLogradouro = new JLabel("Logradouro");
@@ -157,12 +154,12 @@ public class CadastroClientes extends JFrame {
 		panel_1.add(tfLogradouro);
 
 		JLabel lblCidade = new JLabel("Cidade");
-		lblCidade.setBounds(458, 94, 46, 14);
+		lblCidade.setBounds(443, 97, 46, 14);
 		panel_1.add(lblCidade);
 
 		tfCidade = new JTextField();
 		tfCidade.setColumns(10);
-		tfCidade.setBounds(508, 91, 139, 20);
+		tfCidade.setBounds(493, 94, 139, 20);
 		panel_1.add(tfCidade);
 
 		JLabel lblNum = new JLabel("Número");
@@ -216,7 +213,7 @@ public class CadastroClientes extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(
 				new TitledBorder(null, "A\u00E7\u00F5es", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(87, 391, 657, 49);
+		panel_2.setBounds(144, 402, 642, 49);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -305,7 +302,7 @@ public class CadastroClientes extends JFrame {
 			}
 		});
 
-		btnCadastrar.setBounds(10, 15, 89, 23);
+		btnCadastrar.setBounds(32, 15, 89, 23);
 		panel_2.add(btnCadastrar);
 		
 		/**
@@ -330,7 +327,7 @@ public class CadastroClientes extends JFrame {
 				tfComplemento.setText("");
 			}
 		});
-		btnCancelar.setBounds(109, 15, 89, 23);
+		btnCancelar.setBounds(153, 15, 89, 23);
 		panel_2.add(btnCancelar);
 		
 		/**
@@ -384,7 +381,7 @@ public class CadastroClientes extends JFrame {
 			}
 		});
 
-		btnExcluir.setBounds(208, 15, 89, 23);
+		btnExcluir.setBounds(274, 15, 89, 23);
 		panel_2.add(btnExcluir);
 		
 		/**
@@ -404,7 +401,7 @@ public class CadastroClientes extends JFrame {
 				inicio.setLocationRelativeTo(null);
 			}
 		});
-		btnSair.setBounds(413, 15, 89, 23);
+		btnSair.setBounds(516, 15, 89, 23);
 		panel_2.add(btnSair);
 		
 		/**
@@ -470,7 +467,7 @@ public class CadastroClientes extends JFrame {
 				}
 			}
 		});
-		btnAtualizar.setBounds(307, 15, 89, 23);
+		btnAtualizar.setBounds(395, 15, 89, 23);
 		panel_2.add(btnAtualizar);
 		
 		   /**
@@ -483,7 +480,7 @@ public class CadastroClientes extends JFrame {
 		panel_1_1.setLayout(null);
 		panel_1_1.setBorder(new TitledBorder(null, "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1_1.setBackground(Color.WHITE);
-		panel_1_1.setBounds(87, 189, 657, 201);
+		panel_1_1.setBounds(144, 199, 642, 201);
 		panel.add(panel_1_1);
 		
 		/**
@@ -522,11 +519,11 @@ public class CadastroClientes extends JFrame {
 			}
 		});
 
-		btnListar.setBounds(547, 167, 100, 23);
+		btnListar.setBounds(514, 167, 100, 23);
 		panel_1_1.add(btnListar);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 22, 637, 134);
+		scrollPane.setBounds(10, 22, 622, 134);
 		panel_1_1.add(scrollPane);
 
 		tbDados = new JTable();
@@ -542,6 +539,11 @@ public class CadastroClientes extends JFrame {
 			}
 		});
 		scrollPane.setViewportView(tbDados);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+		lblNewLabel_1.setBounds(0, 0, 142, 461);
+		panel.add(lblNewLabel_1);
 
 		tbDados.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseClicked(java.awt.event.MouseEvent evt) {

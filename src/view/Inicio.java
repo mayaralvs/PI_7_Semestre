@@ -41,6 +41,7 @@ public class Inicio extends JFrame {
 	 */
 
 	public Inicio() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 500);
 		contentPane = new JPanel();
@@ -51,7 +52,7 @@ public class Inicio extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "In\u00EDcio", TitledBorder.CENTER, TitledBorder.TOP, null, null));
-		panel.setBounds(0, 0, 633, 371);
+		panel.setBounds(0, 0, 784, 461);
 		contentPane.add(panel);
 
 		/**
@@ -62,7 +63,7 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadFun = new JButton("Cadastrar Funcionário");
-		btnCadFun.setBounds(69, 62, 139, 87);
+		btnCadFun.setBounds(10, 22, 233, 51);
 		btnCadFun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -86,7 +87,7 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadCliente = new JButton("Cadastro de Clientes");
-		btnCadCliente.setBounds(232, 62, 139, 87);
+		btnCadCliente.setBounds(10, 95, 233, 51);
 		btnCadCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -112,7 +113,7 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadProduto = new JButton("Cadastro de Produtos");
-		btnCadProduto.setBounds(391, 62, 139, 87);
+		btnCadProduto.setBounds(10, 168, 233, 51);
 		btnCadProduto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -136,7 +137,7 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnCadForn = new JButton("Cadastro de Fornecedores");
-		btnCadForn.setBounds(69, 186, 144, 87);
+		btnCadForn.setBounds(10, 241, 233, 51);
 		btnCadForn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -160,7 +161,7 @@ public class Inicio extends JFrame {
 		 */
 
 		JButton btnVendas = new JButton("Vendas");
-		btnVendas.setBounds(232, 186, 139, 87);
+		btnVendas.setBounds(10, 314, 233, 51);
 		btnVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -178,12 +179,12 @@ public class Inicio extends JFrame {
 		panel.add(btnVendas);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\mvlln\\Downloads\\Logotipo_confeitaria_bolos_gradiente_rosa_marrom-removebg-preview (2).png"));
-		lblNewLabel.setBounds(512, 249, 114, 100);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\Logotipo_confeitaria_bolos_gradiente_rosa_marrom-removebg-preview.png"));
+		lblNewLabel.setBounds(241, 11, 533, 439);
 		panel.add(lblNewLabel);
 
 		JButton btnVendas_1 = new JButton("Compras");
+		btnVendas_1.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\sacolas-de-compras.png"));
 		btnVendas_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -195,7 +196,7 @@ public class Inicio extends JFrame {
 		});
 		btnVendas_1.setVerticalTextPosition(SwingConstants.BOTTOM);
 		btnVendas_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnVendas_1.setBounds(391, 186, 139, 87);
+		btnVendas_1.setBounds(10, 387, 233, 51);
 		panel.add(btnVendas_1);
 	}
 }

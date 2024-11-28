@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import controller.Conexao;
 import model.Cliente;
@@ -81,4 +83,35 @@ public class ClienteDAO {
 			return rs.next(); // Retorna true se já existir
 		}
 	}
+	
+	public List<Cliente> listarClientes() throws SQLException {
+	    String sql = "SELECT * FROM clientes"; // Consulta para buscar todos os clientes
+	    List<Cliente> clientes = new ArrayList<>();
+
+	    try (Connection con = Conexao.conexao(); PreparedStatement stmt = con.prepareStatement(sql)) {
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        // Loop para adicionar todos os clientes ao ArrayList
+	        while (rs.next()) {
+	            Cliente cliente = new Cliente(
+	                rs.getInt("id"),
+	                rs.getString("nome"),
+	                rs.getString("telefone"),
+	                rs.getString("email"),
+	                rs.getString("cpf"),
+	                rs.getString("logradouro"),
+	                rs.getString("numero"),
+	                rs.getString("cidade"),
+	                rs.getString("estado"),
+	                rs.getString("cep"),
+	                rs.getString("complemento"),
+	                rs.getString("dt_cadastro") // Verifique se este campo existe
+	            );
+	            clientes.add(cliente);
+	        }
+	    }
+	    
+	    return clientes;
+	}
+
 }

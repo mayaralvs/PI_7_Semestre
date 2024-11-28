@@ -26,6 +26,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import javax.swing.border.EtchedBorder;
 
 /**
  * Tela de cadastro de produtos. Permite a inserção, exclusão, atualização e
@@ -86,13 +88,9 @@ public class CadastroFornecedor extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
-		panel_1.setBorder(new TitledBorder(null, "Dados ", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_1.setBounds(151, 0, 509, 209);
+		panel_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Cadastro de Fornecedores", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBounds(151, 0, 633, 209);
 		contentPane.add(panel_1);
-		
-		JLabel lblCadastroDeFornecedores = new JLabel("Cadastro de Fornecedores");
-		lblCadastroDeFornecedores.setBounds(58, 11, 140, 14);
-		panel_1.add(lblCadastroDeFornecedores);
 		
 		tfID = new JTextField();
 		tfID.setEditable(false);
@@ -110,80 +108,80 @@ public class CadastroFornecedor extends JFrame {
 		
 		tfNome = new JTextField();
 		tfNome.setColumns(10);
-		tfNome.setBounds(156, 32, 343, 20);
+		tfNome.setBounds(156, 32, 318, 20);
 		panel_1.add(tfNome);
 		
 		tfTelefone = new JTextField();
 		tfTelefone.setColumns(10);
-		tfTelefone.setBounds(60, 63, 86, 20);
+		tfTelefone.setBounds(534, 32, 86, 20);
 		panel_1.add(tfTelefone);
 		
 		JLabel lblTelefone = new JLabel("Telefone");
-		lblTelefone.setBounds(10, 66, 46, 14);
+		lblTelefone.setBounds(484, 35, 46, 14);
 		panel_1.add(lblTelefone);
 		
 		JLabel lblEmail = new JLabel("E-mail");
-		lblEmail.setBounds(166, 66, 46, 14);
+		lblEmail.setBounds(13, 69, 46, 14);
 		panel_1.add(lblEmail);
 		
 		tfEmail = new JTextField();
 		tfEmail.setColumns(10);
-		tfEmail.setBounds(216, 63, 283, 20);
+		tfEmail.setBounds(58, 66, 283, 20);
 		panel_1.add(tfEmail);
 		
 		JLabel lblCnpj = new JLabel("CNPJ");
-		lblCnpj.setBounds(13, 97, 46, 14);
+		lblCnpj.setBounds(363, 66, 46, 14);
 		panel_1.add(lblCnpj);
 		
 		tfCnpj = new JTextField();
 		tfCnpj.setColumns(10);
-		tfCnpj.setBounds(63, 94, 86, 20);
+		tfCnpj.setBounds(413, 63, 86, 20);
 		panel_1.add(tfCnpj);
 		
 		JLabel lblLogradouro = new JLabel("Logradouro");
-		lblLogradouro.setBounds(163, 97, 59, 14);
+		lblLogradouro.setBounds(13, 97, 59, 14);
 		panel_1.add(lblLogradouro);
 		
 		tfLogradouro = new JTextField();
 		tfLogradouro.setColumns(10);
-		tfLogradouro.setBounds(232, 94, 267, 20);
+		tfLogradouro.setBounds(82, 94, 267, 20);
 		panel_1.add(tfLogradouro);
 		
 		JLabel lblCidade = new JLabel("Cidade");
-		lblCidade.setBounds(135, 125, 46, 14);
+		lblCidade.setBounds(13, 126, 46, 14);
 		panel_1.add(lblCidade);
 		
 		tfCidade = new JTextField();
 		tfCidade.setColumns(10);
-		tfCidade.setBounds(185, 122, 207, 20);
+		tfCidade.setBounds(63, 123, 207, 20);
 		panel_1.add(tfCidade);
 		
 		JLabel lblNum = new JLabel("Número");
-		lblNum.setBounds(13, 124, 46, 14);
+		lblNum.setBounds(363, 97, 46, 14);
 		panel_1.add(lblNum);
 		
 		tfNumero = new JTextField();
 		tfNumero.setColumns(10);
-		tfNumero.setBounds(66, 122, 59, 20);
+		tfNumero.setBounds(413, 94, 59, 20);
 		panel_1.add(tfNumero);
 		
 		JLabel lblTUF = new JLabel("UF");
-		lblTUF.setBounds(418, 125, 25, 14);
+		lblTUF.setBounds(295, 129, 25, 14);
 		panel_1.add(lblTUF);
 		
 		JComboBox cmbUF = new JComboBox();
 		cmbUF.setModel(new DefaultComboBoxModel(new String[] {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", 
 				"MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"}));
-		cmbUF.setBounds(453, 121, 46, 22);
+		cmbUF.setBounds(330, 125, 46, 22);
 		panel_1.add(cmbUF);
 		
 		JLabel lblComplemento = new JLabel("Complemento");
-		lblComplemento.setBounds(166, 156, 77, 14);
+		lblComplemento.setBounds(13, 154, 77, 14);
 		panel_1.add(lblComplemento);
 		
 		tfComplemento = new JTextField();
 		tfComplemento.setColumns(10);
-		tfComplemento.setBounds(244, 153, 255, 20);
+		tfComplemento.setBounds(91, 151, 255, 20);
 		panel_1.add(tfComplemento);
 		
 		JLabel lblDataCad = new JLabel("Data do Cadastro");
@@ -197,19 +195,19 @@ public class CadastroFornecedor extends JFrame {
 		panel_1.add(tfData);
 		
 		JLabel lblCep = new JLabel("CEP");
-		lblCep.setBounds(13, 156, 42, 14);
+		lblCep.setBounds(487, 94, 42, 14);
 		panel_1.add(lblCep);
 		
 		tfCep = new JTextField();
 		tfCep.setColumns(10);
-		tfCep.setBounds(63, 153, 86, 20);
+		tfCep.setBounds(520, 94, 100, 20);
 		panel_1.add(tfCep);
 		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setLayout(null);
 		panel_1_1.setBorder(new TitledBorder(null, "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1_1.setBackground(Color.WHITE);
-		panel_1_1.setBounds(151, 207, 509, 137);
+		panel_1_1.setBounds(151, 207, 633, 183);
 		contentPane.add(panel_1_1);
 		
 		/**
@@ -247,11 +245,11 @@ public class CadastroFornecedor extends JFrame {
 				}
 			}
 		});
-		btnListar.setBounds(399, 108, 100, 23);
+		btnListar.setBounds(523, 149, 100, 23);
 		panel_1_1.add(btnListar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 22, 489, 75);
+		scrollPane.setBounds(10, 22, 613, 116);
 		panel_1_1.add(scrollPane);
 		
 		tbDados = new JTable();
@@ -313,7 +311,7 @@ public class CadastroFornecedor extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setBorder(new TitledBorder(null, "A\u00E7\u00F5es", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(148, 342, 512, 49);
+		panel_2.setBounds(148, 401, 636, 49);
 		contentPane.add(panel_2);
 		
 		/**
@@ -393,7 +391,7 @@ public class CadastroFornecedor extends JFrame {
 		        }
 			}
 		});
-		btnCadastrar.setBounds(10, 15, 89, 23);
+		btnCadastrar.setBounds(31, 15, 89, 23);
 		panel_2.add(btnCadastrar);
 		
 		/**
@@ -418,7 +416,7 @@ public class CadastroFornecedor extends JFrame {
 	            tfComplemento.setText("");
 			}
 		});
-		btnCancelar.setBounds(109, 15, 89, 23);
+		btnCancelar.setBounds(151, 15, 89, 23);
 		panel_2.add(btnCancelar);
 		
 		/**
@@ -468,7 +466,7 @@ public class CadastroFornecedor extends JFrame {
 	            }
 			}
 		});
-		btnExcluir.setBounds(208, 15, 89, 23);
+		btnExcluir.setBounds(271, 15, 89, 23);
 		panel_2.add(btnExcluir);
 		
 		/**
@@ -489,7 +487,7 @@ public class CadastroFornecedor extends JFrame {
 		        inicio.setLocationRelativeTo(null);
 			}
 		});
-		btnSair.setBounds(413, 15, 89, 23);
+		btnSair.setBounds(511, 15, 89, 23);
 		panel_2.add(btnSair);
 		
 		/**
@@ -554,8 +552,12 @@ if(tfID.getText().equals("")) {
 				}	
 			}
 		});
-		btnAtualizar.setBounds(307, 15, 89, 23);
+		btnAtualizar.setBounds(391, 15, 89, 23);
 		panel_2.add(btnAtualizar);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+		lblNewLabel.setBounds(10, 0, 142, 461);
+		contentPane.add(lblNewLabel);
 	}
-
 }

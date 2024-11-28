@@ -27,6 +27,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
 
 /**
  * Tela de cadastro de produtos. Permite a inserção, exclusão, atualização e
@@ -85,88 +86,10 @@ public class CadastroProdutos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Cadastro de Produtos");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(240, 0, 171, 26);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblCod = new JLabel("Código:");
-		lblCod.setBounds(27, 69, 46, 14);
-		contentPane.add(lblCod);
-		
-		tfID = new JTextField();
-		tfID.setEditable(false);
-		tfID.setBounds(104, 63, 55, 20);
-		contentPane.add(tfID);
-		tfID.setColumns(10);
-		
-		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setBounds(201, 66, 46, 14);
-		contentPane.add(lblNome);
-		
-		tfNome = new JTextField();
-		tfNome.setColumns(10);
-		tfNome.setBounds(252, 63, 253, 20);
-		contentPane.add(tfNome);
-		
-		JLabel lblFabricante = new JLabel("Fabricante:");
-		lblFabricante.setBounds(27, 100, 67, 14);
-		contentPane.add(lblFabricante);
-		
-		tfFabricante = new JTextField();
-		tfFabricante.setColumns(10);
-		tfFabricante.setBounds(104, 94, 136, 20);
-		contentPane.add(tfFabricante);
-		
-		JLabel lblLote = new JLabel("Lote:");
-		lblLote.setBounds(287, 97, 46, 14);
-		contentPane.add(lblLote);
-		
-		tfLote = new JTextField();
-		tfLote.setColumns(10);
-		tfLote.setBounds(338, 94, 86, 20);
-		contentPane.add(tfLote);
-		
-		JLabel lblCusto = new JLabel("Custo:");
-		lblCusto.setBounds(470, 100, 46, 14);
-		contentPane.add(lblCusto);
-		
-		tfCusto = new JTextField();
-		tfCusto.setColumns(10);
-		tfCusto.setBounds(521, 97, 86, 20);
-		contentPane.add(tfCusto);
-		
-		JLabel lblCategoria = new JLabel("Categoria:");
-		lblCategoria.setBounds(27, 131, 67, 14);
-		contentPane.add(lblCategoria);
-		
-		tfCategoria = new JTextField();
-		tfCategoria.setColumns(10);
-		tfCategoria.setBounds(104, 125, 136, 20);
-		contentPane.add(tfCategoria);
-		
-		JLabel lblPublico = new JLabel("Público:");
-		lblPublico.setBounds(287, 125, 46, 14);
-		contentPane.add(lblPublico);
-		
-		tfPublico = new JTextField();
-		tfPublico.setColumns(10);
-		tfPublico.setBounds(338, 122, 86, 20);
-		contentPane.add(tfPublico);
-		
-		JLabel lblFornecedor = new JLabel("Fornecedor:");
-		lblFornecedor.setBounds(27, 159, 67, 14);
-		contentPane.add(lblFornecedor);
-		
-		tfFornecedor = new JTextField();
-		tfFornecedor.setColumns(10);
-		tfFornecedor.setBounds(104, 153, 136, 20);
-		contentPane.add(tfFornecedor);
-		
 		JPanel panel_1_1 = new JPanel();
 		panel_1_1.setBorder(new TitledBorder(null, "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1_1.setBackground(Color.WHITE);
-		panel_1_1.setBounds(30, 184, 638, 146);
+		panel_1_1.setBounds(146, 184, 627, 206);
 		contentPane.add(panel_1_1);
 		
 		/**
@@ -175,7 +98,7 @@ public class CadastroProdutos extends JFrame {
 	     */
 		
 		JButton btnListar = new JButton("Listar dados");
-		btnListar.setBounds(528, 112, 100, 23);
+		btnListar.setBounds(517, 172, 100, 23);
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -211,7 +134,7 @@ public class CadastroProdutos extends JFrame {
 		panel_1_1.add(btnListar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 22, 618, 86);
+		scrollPane.setBounds(10, 22, 607, 139);
 		panel_1_1.add(scrollPane);
 		
 		tbDados = new JTable();
@@ -289,7 +212,7 @@ public class CadastroProdutos extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setBorder(new TitledBorder(null, "A\u00E7\u00F5es", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_2.setBounds(27, 331, 641, 49);
+		panel_2.setBounds(146, 401, 627, 49);
 		contentPane.add(panel_2);
 		
 		/**
@@ -337,7 +260,7 @@ public class CadastroProdutos extends JFrame {
 			        }
 			}
 		});
-		btnCadastrar.setBounds(10, 15, 89, 23);
+		btnCadastrar.setBounds(32, 15, 89, 23);
 		panel_2.add(btnCadastrar);
 		
 
@@ -363,7 +286,7 @@ public class CadastroProdutos extends JFrame {
 	            tfQtde.setText("");
 			}
 		});
-		btnCancelar.setBounds(109, 15, 89, 23);
+		btnCancelar.setBounds(153, 15, 89, 23);
 		panel_2.add(btnCancelar);
 		
 		/**
@@ -402,7 +325,7 @@ public class CadastroProdutos extends JFrame {
 		        }
 			}
 		});
-		btnExcluir.setBounds(208, 15, 89, 23);
+		btnExcluir.setBounds(274, 15, 89, 23);
 		panel_2.add(btnExcluir);
 		
 		/**
@@ -422,7 +345,7 @@ public class CadastroProdutos extends JFrame {
 		        inicio.setLocationRelativeTo(null);
 			}
 		});
-		btnSair.setBounds(413, 15, 89, 23);
+		btnSair.setBounds(516, 15, 89, 23);
 		panel_2.add(btnSair);
 		
 		/**
@@ -474,25 +397,109 @@ public class CadastroProdutos extends JFrame {
 
 			}
 		});
-		btnAtualizar.setBounds(307, 15, 89, 23);
+		btnAtualizar.setBounds(395, 15, 89, 23);
 		panel_2.add(btnAtualizar);
 		
-		JLabel lblValor = new JLabel("Valor:");
-		lblValor.setBounds(287, 156, 46, 14);
-		contentPane.add(lblValor);
-		
-		tfValor = new JTextField();
-		tfValor.setColumns(10);
-		tfValor.setBounds(338, 153, 86, 20);
-		contentPane.add(tfValor);
-		
-		JLabel lblQtde = new JLabel("Quantidade:");
-		lblQtde.setBounds(475, 159, 67, 14);
-		contentPane.add(lblQtde);
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Cadastro de Produtos", TitledBorder.CENTER, TitledBorder.TOP, null, null));
+		panel.setBounds(147, 0, 627, 173);
+		contentPane.add(panel);
+		panel.setLayout(null);
 		
 		tfQtde = new JTextField();
+		tfQtde.setBounds(528, 125, 63, 20);
+		panel.add(tfQtde);
 		tfQtde.setColumns(10);
-		tfQtde.setBounds(552, 153, 86, 20);
-		contentPane.add(tfQtde);
+		
+		tfCusto = new JTextField();
+		tfCusto.setBounds(505, 66, 86, 20);
+		panel.add(tfCusto);
+		tfCusto.setColumns(10);
+		
+		tfNome = new JTextField();
+		tfNome.setBounds(260, 32, 253, 20);
+		panel.add(tfNome);
+		tfNome.setColumns(10);
+		
+		JLabel lblCusto = new JLabel("Custo:");
+		lblCusto.setBounds(454, 69, 46, 14);
+		panel.add(lblCusto);
+		
+		JLabel lblQtde = new JLabel("Quantidade:");
+		lblQtde.setBounds(459, 128, 67, 14);
+		panel.add(lblQtde);
+		
+		tfValor = new JTextField();
+		tfValor.setBounds(346, 122, 86, 20);
+		panel.add(tfValor);
+		tfValor.setColumns(10);
+		
+		tfPublico = new JTextField();
+		tfPublico.setBounds(346, 91, 86, 20);
+		panel.add(tfPublico);
+		tfPublico.setColumns(10);
+		
+		tfLote = new JTextField();
+		tfLote.setBounds(346, 63, 86, 20);
+		panel.add(tfLote);
+		tfLote.setColumns(10);
+		
+		JLabel lblLote = new JLabel("Lote:");
+		lblLote.setBounds(295, 66, 46, 14);
+		panel.add(lblLote);
+		
+		JLabel lblPublico = new JLabel("Público:");
+		lblPublico.setBounds(295, 94, 46, 14);
+		panel.add(lblPublico);
+		
+		JLabel lblValor = new JLabel("Valor:");
+		lblValor.setBounds(295, 125, 46, 14);
+		panel.add(lblValor);
+		
+		tfFornecedor = new JTextField();
+		tfFornecedor.setBounds(112, 122, 136, 20);
+		panel.add(tfFornecedor);
+		tfFornecedor.setColumns(10);
+		
+		tfCategoria = new JTextField();
+		tfCategoria.setBounds(112, 94, 136, 20);
+		panel.add(tfCategoria);
+		tfCategoria.setColumns(10);
+		
+		tfFabricante = new JTextField();
+		tfFabricante.setBounds(112, 63, 136, 20);
+		panel.add(tfFabricante);
+		tfFabricante.setColumns(10);
+		
+		tfID = new JTextField();
+		tfID.setBounds(112, 32, 55, 20);
+		panel.add(tfID);
+		tfID.setEditable(false);
+		tfID.setColumns(10);
+		
+		JLabel lblCod = new JLabel("Código:");
+		lblCod.setBounds(35, 38, 46, 14);
+		panel.add(lblCod);
+		
+		JLabel lblFabricante = new JLabel("Fabricante:");
+		lblFabricante.setBounds(35, 69, 67, 14);
+		panel.add(lblFabricante);
+		
+		JLabel lblCategoria = new JLabel("Categoria:");
+		lblCategoria.setBounds(35, 100, 67, 14);
+		panel.add(lblCategoria);
+		
+		JLabel lblFornecedor = new JLabel("Fornecedor:");
+		lblFornecedor.setBounds(35, 128, 67, 14);
+		panel.add(lblFornecedor);
+		
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setBounds(209, 35, 46, 14);
+		panel.add(lblNome);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+		lblNewLabel.setBounds(0, 0, 142, 461);
+		contentPane.add(lblNewLabel);
 	}
 }

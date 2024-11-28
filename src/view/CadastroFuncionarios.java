@@ -34,6 +34,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.InputEvent;
 import javax.swing.border.EtchedBorder;
+import javax.swing.ImageIcon;
 
 /**
  * Tela de cadastro de funcionarios. Permite a inserção, exclusão, atualização e
@@ -89,7 +90,7 @@ public class CadastroFuncionarios extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "A\u00E7\u00F5es", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(-4, 407, 718, 55);
+		panel.setBounds(149, 407, 635, 55);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -138,7 +139,7 @@ public class CadastroFuncionarios extends JFrame {
 
 			}
 		});
-		btnSalvar.setBounds(10, 21, 102, 23);
+		btnSalvar.setBounds(45, 21, 102, 23);
 		panel.add(btnSalvar);
 		
 		/**
@@ -179,7 +180,7 @@ public class CadastroFuncionarios extends JFrame {
 				}
 			}
 		});
-		btnAtualizar.setBounds(139, 21, 102, 23);
+		btnAtualizar.setBounds(192, 21, 102, 23);
 		panel.add(btnAtualizar);
 		
 		/**
@@ -222,7 +223,7 @@ public class CadastroFuncionarios extends JFrame {
 
 			}
 		});
-		btnExcluir.setBounds(269, 21, 102, 23);
+		btnExcluir.setBounds(339, 21, 102, 23);
 		panel.add(btnExcluir);
 		
 
@@ -244,13 +245,13 @@ public class CadastroFuncionarios extends JFrame {
 				inicio.setLocationRelativeTo(null);
 			}
 		});
-		btnVoltar.setBounds(400, 21, 102, 23);
+		btnVoltar.setBounds(486, 21, 102, 23);
 		panel.add(btnVoltar);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(-4, 328, 718, 46);
+		panel_1.setBounds(149, 350, 635, 46);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 
@@ -364,7 +365,7 @@ public class CadastroFuncionarios extends JFrame {
 		panel_2.setBorder(new TitledBorder(
 				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Cadastrar",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_2.setBounds(0, 0, 718, 103);
+		panel_2.setBounds(149, 0, 635, 103);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 
@@ -397,12 +398,12 @@ public class CadastroFuncionarios extends JFrame {
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "Listar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_3.setBounds(0, 115, 718, 192);
+		panel_3.setBounds(149, 125, 635, 192);
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 22, 698, 156);
+		scrollPane.setBounds(10, 22, 615, 156);
 		panel_3.add(scrollPane);
 
 		tbDados = new JTable();
@@ -418,6 +419,11 @@ public class CadastroFuncionarios extends JFrame {
 			}
 		});
 		scrollPane.setViewportView(tbDados);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\mvlln\\Downloads\\JEMA VIVI 022-04 (4).jpg"));
+		lblNewLabel_1.setBounds(0, 1, 142, 461);
+		contentPane.add(lblNewLabel_1);
 		
 		/**
 	     * Exibe a lista dos ítens do banco de dados.
